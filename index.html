@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+  <meta name="theme-color" content="#1a1a2e" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="Бычок" />
+  <title>Бычок против Зомби-Универа</title>
+  <link rel="manifest" href="manifest.json" />
+  <link rel="apple-touch-icon" href="icons/icon-192.png" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="game-wrap">
+    <canvas id="game" width="480" height="270"></canvas>
+
+    <div id="hud">
+      <div id="hp-bar-outer"><div id="hp-bar-inner"></div></div>
+      <div id="hud-info">
+        <span id="level-label">Уровень 1</span>
+        <span id="score-label">Счёт: 0</span>
+        <span id="keys-label">🔑 0/3</span>
+      </div>
+      <div id="ult-bar-outer">
+        <div id="ult-bar-inner"></div>
+      </div>
+      <button id="pause-btn" aria-label="Пауза">⏸</button>
+      <button id="sound-btn" aria-label="Звук">🔊</button>
+    </div>
+
+    <div id="overlay" class="overlay hidden">
+      <div class="overlay-content">
+        <h1 id="ov-title">Бычок</h1>
+        <div id="ov-text"></div>
+        <button id="ov-btn">Играть</button>
+      </div>
+    </div>
+
+    <div id="touch-controls" class="hidden">
+      <div class="dpad">
+        <button class="tbtn" data-action="left" aria-label="Влево">◀</button>
+        <button class="tbtn" data-action="right" aria-label="Вправо">▶</button>
+      </div>
+      <div class="actions">
+        <button class="tbtn action-btn" data-action="ult" aria-label="Ульта">⚡</button>
+        <button class="tbtn action-btn" data-action="shoot" aria-label="Стрельба">🎯</button>
+        <button class="tbtn action-btn" data-action="attack" aria-label="Атака">👊</button>
+        <button class="tbtn action-btn" data-action="jump" aria-label="Прыжок">⬆</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="game.js"></script>
+</body>
+</html>
